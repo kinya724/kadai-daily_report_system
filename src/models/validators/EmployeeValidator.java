@@ -9,7 +9,7 @@ import models.Employee;
 import utils.DBUtil;
 
 public class EmployeeValidator {
-
+    // 社員情報の必須入力チェック
     public static List<String> validate(Employee e, Boolean codeDupulicateCheckFlag, Boolean passwordCheckFlag) {
         List<String> errors = new ArrayList<String>();
 
