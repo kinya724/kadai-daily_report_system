@@ -10,10 +10,10 @@ import utils.DBUtil;
 
 public class EmployeeValidator {
     // 社員情報の必須入力チェック
-    public static List<String> validate(Employee e, Boolean codeDupulicateCheckFlag, Boolean passwordCheckFlag) {
+    public static List<String> validate(Employee e, Boolean codeDuplicateCheckFlag, Boolean passwordCheckFlag) {
         List<String> errors = new ArrayList<String>();
 
-        String code_error = validateCode(e.getCode(), codeDupulicateCheckFlag);
+        String code_error = validateCode(e.getCode(), codeDuplicateCheckFlag);
         if(!code_error.equals("")) {
             errors.add(code_error);
         }
@@ -32,14 +32,14 @@ public class EmployeeValidator {
     }
 
     // 社員番号
-    private static String validateCode(String code, Boolean codeDupulicateCheckFlag) {
+    private static String validateCode(String code, Boolean codeDuplicateCheckFlag) {
         // 必須入力チェック
         if(code == null || code.equals("")) {
             return "社員番号を入力してください。";
         }
 
         // すでに登録されている社員番号との重複チェック
-        if(codeDupulicateCheckFlag) {
+        if(codeDuplicateCheckFlag) {
             EntityManager em = DBUtil.createEntityManager();
             long employees_count = (long)em.createNamedQuery("checkRegisteredCode", Long.class).setParameter("code", code).getSingleResult();
             em.close();
