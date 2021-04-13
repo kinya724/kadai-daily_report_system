@@ -13,16 +13,13 @@ body {
 
 #content {
     width: 94%
-    height: 15px;
+    margin-top: 15px;
     padding-left: 3%;
 }
 
 h1 {
-    width: 94%;
-    padding-top: 17px;
-    padding-left: 3%;
     font-size: 24px;
-    color: #eeeeee;
+    display: inline;
 }
 
 h2 {
@@ -50,7 +47,7 @@ table, tr, th, td {
 }
 
 table {
-    width: 92%;
+    width: 100%;
     table-layout: fixed;
 }
 
@@ -116,4 +113,27 @@ tr.row0 {
 
 select {
     height: 30px;
+}
+
+#header_menu {
+    width: 57%;
+    padding-top: 17px;
+    padding-left: 3%;
+    display: inline-block;
+}
+
+#employee_name {
+    color: #cccccc;
+    width: 36%;
+    padding-right: 3%;
+    text-align: right;
+    display: inline-block;
+}
+
+#header a {
+    color: #cccccc;
+}
+
+h1 a {
+    color: #cccccc;
 }
